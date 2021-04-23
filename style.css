@@ -7,15 +7,79 @@ body {
     margin: 0px;
     font-family: Arial, sans-serif;
 }
-header, section {
-    padding: 20px;
+
+h1{
+    font-size: 1.5em;
+}
+
+h2{
+    font-size: 1em;
+}
+
+h3{
+    font-size: 0.8em;
+}
+
+#header{
+    grid-area: a;
+    background-color: rgb(255, 180, 180);
+    padding-left: 12px;
 }
 p, li {
     line-height: 1.5em;
 }
-
-#inspiration {
-    background-color: #F0F0F0;
-    padding-top: 40px;
-    padding-bottom: 40px;
+#side{
+    grid-area: b;
+    background-color: rgb(255, 244, 149);
 }
+#explorer{
+    grid-area: c;
+    background-color: rgb(131, 209, 131);
+    padding-left: 20%
+}
+
+#files{
+    grid-area: d;
+    background-color: rgb(162, 162, 255);
+}
+#inspiration {
+    grid-area: e;
+    background-color: rgb(225, 165, 253);
+    padding-left: 12px;
+}
+
+.container {
+    background-color: black;
+    margin-top: 10vh;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    border: 5px solid black;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 8fr;
+    grid-template-rows: 0.5fr 0.5fr 60vh;
+    grid-template-areas: 
+       "a a a"
+       "b c d"
+       "b c e"; 
+    padding: 0px;
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+    overflow: hidden;
+}
+
+.hidden{
+    display: none;
+}
+
+button{
+    border: none;
+    background-color: transparent;
+}
+
+button:hover{
+    border: none;
+    background-color: white;
+    opacity: 0.3;
+}
+    
