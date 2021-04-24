@@ -62,7 +62,7 @@ p, li {
     /* border: 5px solid white; */
     border-radius: 5px;
     display: grid;
-    grid-template-columns: 2fr 8fr;
+    grid-template-columns: 20vw 60vw;
     grid-template-rows: 0.5fr 0.5fr 60vh;
     grid-template-areas: 
        "a a"
