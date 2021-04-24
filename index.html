@@ -5,16 +5,20 @@
         <!-- stylesheets and metadata go here -->
        <title>My CS130 Homepage</title>       
        <link rel="stylesheet" href="style.css">
+       <link rel="preconnect" href="https://fonts.gstatic.com">
+       <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
    </head>
    <body>
        <!-- HTML content tags go here. Change anything you want! -->
         <main>
-            <div class="container">
-                <div id="header">
-                    <h1>eecs130</h1>
+            <div class="container draggable" id="container">
+                <div class="handle" id="header">
+                    <h1 style="display: inline-block;">eecs130</h1>
+                    <button style= "margin-right: 1em; display: inline-block;" type="button" onclick="myFunction1('container')">x</button>
+
                 </div> 
                 <div id="side">
-                    <h2></h2>
+                    <h2>explorer</h2>
                     <!-- 
                         Links to your tutorial assignments go here.
                         When you submit a new tutorial, add a link to it
@@ -22,23 +26,85 @@
                     -->
                 </div>
                 <div id="explorer">
-                    <h2>explorer</h2>
                     <button onclick="myFunction('homework')"><h3>homework</h3></button>
                     <div id="homework" class="hidden"><a href="hw01/01_cssgrid/index.html"><h3>hw01_cssgrid</h3></a>
                     <a href="hw01/02_flexbox/index.html"><h3>hw01_flexbox</h3></a></div>
                     <button onclick="myFunction('tutorials')"><h3>tutorials</h3></button>
                     <div id="tutorials" class="hidden"><a href="tutorial01/index.html"><h3>tutorial01</h3></a>
                     <a href="tutorial03/index.html"><h3>tutorial03</h3></a></div>
-                    <div><h3>inspiration</h3></div>
                     <!-- 
                         Links to your Homework assignments go here.
                         When you submit a new tutorial, add a link to it
                         here (if applicable)
                     -->
                 </div>
-                <div id="files"><h2></h2></div>
+                <div id="files"><h2>design inspiration</h2></div>
                 <div id="inspiration">
-                    <h2>Design Inspiration</h2>
+                    <div class="content">
+                        <section class="cards">
+                            <section class="card">
+                                <div><a href="http://www.marianopascual.me/index.html">
+                                    <div class="image-div" style="background-image: url('https://i.pinimg.com/564x/d8/6d/c6/d86dc697042cb519444d39031639cf79.jpg');"></div>
+                                </a></div>
+                            </section>
+                            <section class="card">
+                                <div><a href="https://www.pinterest.cl/pin/745486544570214222/">
+                                    <div class="image-div" style="background-image: url('https://i.pinimg.com/564x/0e/f4/91/0ef49104333294dc26ca68ccaad16ad5.jpg');"></div>
+                                </a></div>
+                            </section>
+                            <section class="card"> 
+                                <div><a href="https://www.pinterest.cl/pin/745486544570214202/">
+                                    <div class="image-div" style="background-image: url('https://i.pinimg.com/564x/f1/2b/87/f12b8752323c51c812d5d51c7d047832.jpg');"></div>
+                                </a></div>
+                            </section>
+                            <section class="card"> 
+                                <div><a href="https://dribbble.com/shots/6986945-WinMac-OS-1-0-Sketch-App-Finder">
+                                    <div class="image-div" style="background-image: url('https://i.pinimg.com/564x/b7/05/04/b70504e306e00f8415c58ff1a329a4cd.jpg');"></div>
+                                </a></div>
+                            </section>
+                            <section class="card">
+                                <div><a href="https://doniabatata.tumblr.com/image/615876323879092224">
+                                    <div class="image-div" style="background-image: url('https://i.pinimg.com/564x/4c/35/9b/4c359bcd1680446ec74d1847420bb473.jpg');"></div>
+                                </a></div>
+                            </section>
+                            <section class="card">
+                                <div><a href="https://issuu.com/noonteuk/docs/port_page_160860/1?ff=">
+                                    <div class="image-div" style="background-image: url('https://i.pinimg.com/564x/c1/7e/b6/c17eb61356f2f0201abca1feb5472a0f.jpg');"></div>
+                                </a></div>
+                            </section>
+                            <section class="card">
+                                <div><a href="https://studiodasol.com/11079652">
+                                    <div class="image-div" style="background-image: url('https://i.pinimg.com/564x/e1/6f/99/e16f999b84070586ff03f4a6475d62b6.jpg');"></div>
+                                </a></div>
+                            </section>
+                            <section class="card">
+                                <div><a href="https://www.pinterest.cl/pin/745486544570214130/">
+                                    <div class="image-div" style="background-image: url('https://i.pinimg.com/564x/53/6d/65/536d6576ff69f5c9573447d2b8e22835.jpg');"></div>
+                                </a></div>
+                            </section>
+                            <section class="card">
+                                <div><a href="https://www.behance.net/gallery/72476351/LAB-?tracking_source=for_you_activity">
+                                    <div class="image-div" style="background-image: url('https://i.pinimg.com/564x/c4/9f/72/c49f72e8e7f56fb6c49cf5a69cc5af67.jpg');"></div>
+                                </a></div>
+                            </section>
+                            <section class="card">
+                                <div><a href="https://mp.weixin.qq.com/s/YrvoxbA3kVydX1bz-yHemg">
+                                    <div class="image-div" style="background-image: url('https://i.pinimg.com/564x/d0/d4/da/d0d4daafbda35587c5ef1f7b2d283e76.jpg');"></div>
+                                </a></div>
+                            </section>
+                            <section class="card">
+                                <div><a href="https://dribbble.com/shots/4837675-Spotify">
+                                    <div class="image-div" style="background-image: url('https://i.pinimg.com/564x/4a/6d/03/4a6d036557f37337d607f83f02c4b1ea.jpg');"></div>
+                                </a></div>
+                            </section>
+                            <section class="card">
+                                <div><a href="https://mp.weixin.qq.com/s/aYdVNxcWyJzSvIxjU64kKA">
+                                    <div class="image-div" style="background-image: url('https://i.pinimg.com/564x/95/4a/37/954a3736a14be6204606bd2125aa6abb.jpg');"></div>
+                                </a></div>
+                            </section>
+                        </section>
+                    </div>
+
                     <!-- 
                         Links to 5-10 websites that inspire you
                     -->
