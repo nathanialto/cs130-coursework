@@ -22,6 +22,10 @@ h3{
     font-size: 1.2em;
 }
 
+h4{
+    margin-top: 0.3em;
+}
+
 #header{
     grid-area: a;
     background-color: #ff7096;
