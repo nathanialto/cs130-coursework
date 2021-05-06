@@ -26,12 +26,12 @@
                     -->
                 </div>
                 <div id="explorer">
-                    <button onclick="myFunction('homework')"><h3>homework</h3></button>
-                    <div id="homework" class="hidden">
+                    <button onclick="homework()"><h3>homework</h3></button>
+                    <div id="" class="hidden">
                     <a href="hw01/01_cssgrid/index.html"><h4>hw01_cssgrid</h4></a>
                     <a href="hw01/02_flexbox/index.html"><h4>hw01_flexbox</h4></a>
                     <a href="hw02/index.html"><h4>hw02_spotifyui</h4></a></div>
-                    <button onclick="myFunction('tutorials')"><h3>tutorials</h3></button>
+                    <button onclick="tutorials()"><h3>tutorials</h3></button>
                     <div id="tutorials" class="hidden">
                     <a href="tutorial01/index.html"><h4>tutorial01</h4></a>
                     <a href="tutorial03/index.html"><h4>tutorial03</h4></a>
@@ -42,8 +42,35 @@
                         here (if applicable)
                     -->
                 </div>
-                <div id="files"><h2>design inspiration</h2></div>
-                <div id="inspiration">
+                <!--homework-->
+                <div id="homework_title" class="window-name hidden"><h2>homework</h2></div>
+                <div id="homework" class="window-open hidden">
+                    <div class="content">
+                        <section class="cards">
+                            <section class="card">
+                                <div><a href="hw01/01_cssgrid/index.html">
+                                    <div class="image-div" style="background-image: url('hw01/01_cssgrid/index.html');"></div>
+                                </a></div>
+                            </section>
+                            <section class="card">
+                                <div><a href="hw01/02_flexbox/index.html">
+                                    <div class="image-div" style="background-image: url('hw01/01_cssgrid/index.html');"></div>
+                                </a></div>
+                            </section>
+                            <section class="card">
+                                <div><a href="hw02/index.html">
+                                    <div class="image-div" style="background-image: url('hw02/index.html');"></div>
+                                </a></div>
+                            </section>
+                        </section>
+                    </div>
+                </div>
+
+                <!--tutorials-->
+
+                <!--design inspo-->
+                <div id="inspo_title" class="window-name"><h2>design inspiration</h2></div>
+                <div id="inspo" class="window-open">
                     <div class="content">
                         <section class="cards">
                             <section class="card">

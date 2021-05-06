@@ -1,27 +1,36 @@
-function myFunction(elem) {
-    var x = document.getElementById(elem);
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
+function homework(elem) {
+    document.getElementById("homework").style.display = "block";
+    document.getElementById("homework_title").style.display = "block";
+
+    document.getElementById("inspo").style.display = "none";
+    document.getElementById("inspo_title").style.display = "none";
+
+    document.getElementById("tutorials").style.display = "none";
+    document.getElementById("tutorials_title").style.display = "none";
+
 }
 
-// get all draggie elements
-var draggableElems = document.querySelectorAll('.draggable');
-// array of Draggabillies
-var draggies = []
-    
+function inspo(elem) {
+    document.getElementById("homework").style.display = "none";
+    document.getElementById("homework_title").style.display = "none";
 
-// init Draggabillies
-for ( var i=0, len = draggableElems.length; i < len; i++ ) {
-  var draggableElem = draggableElems[i];
-  var draggie = new Draggabilly( draggableElem, {
-    handle: '.handle'
-  });
-  draggies.push( draggie );
+    document.getElementById("inspo").style.display = "block";
+    document.getElementById("inspo_title").style.display = "block";
+
+    document.getElementById("tutorials").style.display = "none";
+    document.getElementById("tutorials_title").style.display = "none";
 }
 
+function tutorials(elem) {
+    document.getElementById("homework").style.display = "none";
+    document.getElementById("homework_title").style.display = "none";
+
+    document.getElementById("inspo").style.display = "none";
+    document.getElementById("inspo_title").style.display = "none";
+
+    document.getElementById("tutorials").style.display = "block";
+    document.getElementById("tutorials_title").style.display = "block";
+}
   
 function myFunction1(elem) {
     var x = document.getElementById(elem);
