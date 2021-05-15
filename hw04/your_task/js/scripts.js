@@ -17,6 +17,7 @@ const search = (ev) => {
 }
 
 var i;
+i = 0;
 
 const getTracks = (term) => {
     console.log(`
@@ -31,21 +32,21 @@ const getTracks = (term) => {
     .then(response => response.json())
     .then((data) => {
         if (data.length > 0) {
-            for (i = 0; i > 5; i++){
-                const firstTrack = data[i];
-                elem.innerHTML += getTracksHTML(firstTrack);
+            for (i=0; i < 5; i++)
+                elem.innerHTML += getTracksHTML(data[i]);
+                console.log(data)
             // do something w/ the first Track
-        }}
+        }
         else {
             //display "No tracks found that match your sear
             //criteria"
+            elem.innerHTML += `No tracks found that match your search criteria`; 
         }
-
     });
 };
 
 const getTracksHTML = (data) => {
-    return i`<section class="track-item preview" data-preview-track="${data[i]}">
+    return `<section class="track-item preview" id="${i}" data-preview-track="${data.preview_url}" onclick="playTrack(event);">
         <img src="${data.album.image_url}">
         <i class="fas play-track fa-play" aria-hidden="true"></i>
         <div class="label">
@@ -57,12 +58,55 @@ const getTracksHTML = (data) => {
     </section>`
 };
 
+const playTrack = (data) => {
+    console.log(`hello data:${data.name}`)
+    audioPlayer.setAudioFile(preview_url);
+    let current = document.querySelector('.track-item');
+    current.innerHTML += getTracksHTML(data);
+
+};
+
 const getAlbums = (term) => {
     console.log(`
         get albums from spotify based on the search term
         "${term}" and load them into the #albums section 
         of the DOM...`);
+    const elem = document.querySelector('#albums');
+    elem.innerHTML = "";
+    //fetch this url and now we are doing something with it
+    fetch(baseURL + '?type=album&q=' + term) 
+    //turning it into json (a data file)
+    .then(response => response.json())
+    .then((data) => {
+        if (data.length > 0) {
+            for (i=0; i < data.length; i++)
+                elem.innerHTML += getAlbumsHTML(data[i]);
+            // do something w/ the first Track
+        }
+        else {
+            //display "No tracks found that match your sear
+            //criteria"
+            elem.innerHTML += `No albums found that match your search criteria`; 
+        }
+    });
 };
+
+const getAlbumsHTML = (data) => {
+    if (!data.image_url) {
+        data.image_url = "https://i.pinimg.com/originals/0f/4a/d9/0f4ad9be306be8f5bc1e48f094552bf3.jpg";
+    }
+    return  `<section class="album-card" id="${data.id}">
+                <div>
+                    <img src="${data.image_url}">
+                    <h3>${data.name}</h3>
+                    <div class="footer">
+                        <a href="${data.spotify_url}" target="_blank">
+                            view on spotify
+                        </a>
+                    </div>
+                </div>
+            </section>`
+ };
 
 const getArtist = (term) => {
     console.log(`
@@ -71,7 +115,6 @@ const getArtist = (term) => {
         of the DOM...`);
     const elem = document.querySelector('#artist');
     elem.innerHTML = "";
-
     //fetch this url and now we are doing something with it
     fetch(baseURL + '?type=artist&q=' + term) 
     //turning it into json (a data file)
@@ -82,7 +125,9 @@ const getArtist = (term) => {
             elem.innerHTML += getArtistHTML(firstArtist);
             // do something w/ the first artist
         }
-
+        else {
+            elem.innerHTML += `No artists found that match your search criteria`;
+        }
     });
 };
 
@@ -102,7 +147,6 @@ const getArtistHTML = (data) => {
                 </div>
             </section>`
  };
-
 
 document.querySelector('#search').onkeyup = (ev) => {
     // Number 13 is the "Enter" key on the keyboard
