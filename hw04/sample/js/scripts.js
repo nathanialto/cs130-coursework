@@ -21,6 +21,7 @@ const getTracks = (term) => {
         get tracks from spotify based on the search term
         "${term}" and load them into the #tracks section 
         of the DOM...`);
+    
 };
 
 const getAlbums = (term) => {
