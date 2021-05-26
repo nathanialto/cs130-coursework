@@ -16,6 +16,8 @@ const search = (ev) => {
     }
 }
 
+var songs = [];
+
 var i;
 i = 0;
 
@@ -34,7 +36,8 @@ const getTracks = (term) => {
         if (data.length > 0) {
             for (i=0; i < 5; i++)
                 elem.innerHTML += getTracksHTML(data[i]);
-                console.log(data)
+                elem.innerHTML += playTrackHTML(data[i]);
+                console.log(data);
             // do something w/ the first Track
         }
         else {
@@ -46,7 +49,8 @@ const getTracks = (term) => {
 };
 
 const getTracksHTML = (data) => {
-    return `<section class="track-item preview" id="${i}" data-preview-track="${data.preview_url}" onclick="playTrack(event);">
+
+    return `<section class="track-item preview" data-preview-track="${data.preview_url}" onclick="playTrack(event);">
         <img src="${data.album.image_url}">
         <i class="fas play-track fa-play" aria-hidden="true"></i>
         <div class="label">
@@ -57,13 +61,37 @@ const getTracksHTML = (data) => {
         </div>
     </section>`
 };
+const playTrack = (ev) => {
+    //console.log(ev.currentTarget);
+    const elem = ev.currentTarget;
+    //preview url (the mp3) has been stashed in the "data-preview-track" attribute.
+    // we need to get that attribute out!
+    // const previewURL = elem.dataset.previewTrack;
+    const previewURL = elem.getAttribute('data-preview-track');
+    console.log(previewURL)
+    if (previewURL) {
+        audioPlayer.setAudioFile(previewURL);
+        audioPlayer.play();
+    }
+    else{
+        console.log('there is no preview available');
+    }
+    document.querySelector('footer .track-item').innerHTML = elem.innerHTML;
+    document.querySelector('footer').style.display = block;
 
-const playTrack = (data) => {
-    console.log(`hello data:${data.name}`)
-    audioPlayer.setAudioFile(preview_url);
-    let current = document.querySelector('.track-item');
-    current.innerHTML += getTracksHTML(data);
+};
 
+const playTrackHTML = (data) => {
+
+    return `<section class="track-item preview hidden" id="${i}" data-preview-track="${data.preview_url}" onclick="playTrack(${i});">
+        <img src="${data.album.image_url}">
+        <div class="label">
+            <h3>${data.name}</h3>
+            <p>
+                ${data.artist.name}
+            </p>
+        </div>
+    </section>`
 };
 
 const getAlbums = (term) => {

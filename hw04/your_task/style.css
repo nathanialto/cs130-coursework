@@ -314,6 +314,9 @@ footer .track-item:hover {
     align-items: center;
     margin-bottom: 10px;
 }
+.hidden{
+    display: none;
+}
 
 .player .controls i:hover {
     color: #777;
