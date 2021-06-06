@@ -1,0 +1,31 @@
+html body{
+    background-color: rgb(138, 165, 255);
+    margin: 0;
+    display: flex;
+  
+    /* This centers our sketch horizontally. */
+    justify-content: center;
+
+    /* This centers our sketch vertically. */
+    align-items: center;
+}
+h1{
+    font-size: 3em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color: rgb(255, 230, 148);
+}
+button{
+    border:3px solid rgb(37, 37, 37);
+    border-radius: 12px;
+    font-size: 1.5em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    color:rgb(37, 37, 37);
+    background-color: transparent;
+}
+button:hover{
+    opacity: 0.5;
+}
+

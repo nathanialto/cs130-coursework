@@ -1,0 +1,101 @@
+*{
+    margin-bottom: 0;
+}
+html body{
+    background-color: rgb(138, 165, 255);
+    overflow: hidden;
+    width:100vw;
+    height: 100vh;
+
+}
+h1{
+    font-size: 3em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color: rgb(255, 230, 148);
+}
+p{
+    font-size: 1em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    color: rgb(37, 37, 37);
+}
+button{
+    border:4px solid rgb(37, 37, 37);
+    border-radius: 2em;
+    font-size: 1.5em;
+    width: 100%;
+    height: 2em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    color:rgb(37, 37, 37);
+    background-color: rgb(255, 230, 148);
+}
+button:hover{
+    opacity: 1;
+}
+.container{
+    display: grid;
+    grid-template-columns: 12.5% 15% 15% 15% 15% 15% 12.5%;
+    grid-template-rows: 10% 15% 15% 15% 15% 0%;
+    grid-template-areas:
+        ". . . . . . ."
+        ". a a a c c ."
+        ". b b b c c ."
+        ". d d e e e ."
+        ". d d f f f ."
+        ". . . . . . ."
+        ;
+}
+img{
+    width: 70%;
+}
+#enemy_health{
+    grid-area: a;
+}
+#enemy_text{
+    grid-area: b;
+}
+#enemy_pic{
+    grid-area: c;
+}
+#me_text{
+    grid-area: e;
+}
+#me_health{
+    grid-area: f;
+}
+#me_pic{
+    grid-area: d;
+}
+#foot{
+    background-color: rgb(255, 238, 181);
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    bottom: 0;
+    height: 10vh;
+    padding-left: 4%;
+    margin: 0;
+
+}
+#foot p{
+    width:95vw;
+   
+}
+#foot button{
+    border:3px solid rgb(37, 37, 37);
+    border-radius: 2em;
+    font-size: 1em;
+    width: 20%;
+    margin-right: 4%;
+    height:2em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    color:rgb(37, 37, 37);
+    background-color: rgb(255, 230, 148);
+    margin-top: 1em;}
+#foot button:hover{
+    opacity: 0.5;
+}
